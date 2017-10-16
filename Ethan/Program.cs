@@ -7,8 +7,22 @@ namespace Ethan
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! It's nice to meet you");
-            Console.WriteLine("This is awesome!!!");
+            Random rnd = new Random();
+            List<int> testList = new List<int>();
+
+            for (int i = 0; i < 20; i++) {
+                testList.Add(rnd.Next(100));
+            }
+
+
+            ListTools.Print(testList);
+
+            Console.WriteLine("Reversing...");
+            ListTools.Reverse(testList);
+
+            ListTools.Print(testList);
+
+
         }
     }
 }
