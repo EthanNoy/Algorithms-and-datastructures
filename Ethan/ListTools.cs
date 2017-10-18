@@ -10,10 +10,12 @@ namespace Ethan
         /// Prints out the list.
         /// </summary>
         /// <param name="theList">The list.</param>
-        public static void Print(List<int> theList) {
-            
+        public static void Print(List<int> theList)
+        {
+
             Console.WriteLine("Here is the list!");
-            for (int s = 0; s < theList.Count; s++){
+            for (int s = 0; s < theList.Count; s++)
+            {
                 Console.WriteLine(theList[s]);
 
             }
@@ -27,25 +29,48 @@ namespace Ethan
         /// </summary>
         /// <returns>The reverse.</returns>
         /// <param name="theList">The list.</param>
-        public static void Reverse(List<int> theList) {
-                // TODO Homework 10/16/17 correctly implement me!
-                for (int left_address = 0; left_address < theList.Count; left_address++)
+        public static void Reverse(List<int> theList)
+        {
+            int MinI = 0;
+            int MaxI = theList.Count - 1;
+            while (MinI <= MaxI)
             {
-                for (int right_address = theList.Count - 1; right_address < left_address; right_address--)
-                {
-                    if (theList[left_address] < theList[right_address])
-                    {
-                        int left_value = theList[left_address];
-                        int right_value = theList[right_address];
-                        theList[left_address] = right_value;
-                        theList[right_address] = left_value;
-                    }
-                
-                }
+                int Fetty_Swap = theList[MinI];
+                theList[MinI] = theList[MaxI];
+                theList[MaxI] = Fetty_Swap;
+                MinI++;
+                MaxI--;
             }
 
         }
 
+        /// <summary>
+        /// This function returns the first index of the searchkey in the list.
+        /// If the key cannot be found, it returns -1
+        /// </summary>
+        /// <returns>The first index of the search key</returns>
+        /// <param name="theList">The list to search through</param>
+        /// <param name="searchKey">The number to search for</param>
+        public static int FindFirstIndex(List<int> theList, int searchKey) 
+        {
+            // TODO implement
+            throw new System.NotImplementedException();
+
+        }
+
+        /// <summary>
+        /// This function returns the last index of the searchkey in the list.
+        /// If the key cannot be found, it returns -1
+        /// </summary>
+        /// <returns>The last index of the search key</returns>
+        /// <param name="theList">The list to search through</param>
+        /// <param name="searchKey">The number to search for</param>
+        public static int FindLastIndex(List<int> theList, int searchKey)
+        {
+            // TODO implement
+            throw new System.NotImplementedException();
+
+        }
 
 
     }
