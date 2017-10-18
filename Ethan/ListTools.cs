@@ -28,22 +28,20 @@ namespace Ethan
         /// <returns>The reverse.</returns>
         /// <param name="theList">The list.</param>
         public static void Reverse(List<int> theList) {
-
-            // TODO Homework 10/16/17 correctly implement me!
-            int small_index = 0;
-            int big_index = theList.Count-1;
-            for (int e = 0; e < theList.Count; e++)
+                // TODO Homework 10/16/17 correctly implement me!
+                for (int left_address = 0; left_address < theList.Count; left_address++)
             {
-
-                // all this does is change around index numbers, which you have 
-                // created
-                // additionally, it does not use your index counter 'e' at all..
-
-                int temp = 0;
-                temp = big_index;
-                big_index = small_index;
-                small_index = temp;
-
+                for (int right_address = theList.Count - 1; right_address < left_address; right_address--)
+                {
+                    if (theList[left_address] < theList[right_address])
+                    {
+                        int left_value = theList[left_address];
+                        int right_value = theList[right_address];
+                        theList[left_address] = right_value;
+                        theList[right_address] = left_value;
+                    }
+                
+                }
             }
 
         }

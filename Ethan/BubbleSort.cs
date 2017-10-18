@@ -13,11 +13,9 @@ namespace Ethan
         /// </summary>
         /// <returns>The sort.</returns>
         /// <param name="values">A list of integers to sort.</param>
-        public static void Sort (List<int> values) {
-            
+        public static void Sort (List<int> values) { 
             for (int left_address = 0; left_address < values.Count; left_address++)
             {
-
                 for (int right_address = values.Count - 1; right_address > left_address; right_address--)
                 {
                     if (values[left_address] > values[right_address])
@@ -26,12 +24,9 @@ namespace Ethan
                         int right_value = values[right_address];
                         values[left_address] = right_value;
                         values[right_address] = left_value;
-
-
                     }
                 }
             }
-
         }
 
 
