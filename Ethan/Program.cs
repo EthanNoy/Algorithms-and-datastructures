@@ -24,6 +24,9 @@ namespace Ethan
 
 
             Console.WriteLine("============= end =======================");
+
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
         }
     }
 }
