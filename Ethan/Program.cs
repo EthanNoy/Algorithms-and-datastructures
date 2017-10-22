@@ -23,6 +23,7 @@ namespace Ethan
             Console.WriteLine("Found last at " + ListTools.FindLastIndex(testList, 5));
 
 
+            Console.WriteLine("============= end =======================");
         }
     }
 }

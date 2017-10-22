@@ -53,9 +53,15 @@ namespace Ethan
         /// <param name="searchKey">The number to search for</param>
         public static int FindFirstIndex(List<int> theList, int searchKey) 
         {
-            // TODO implement
-            throw new System.NotImplementedException();
+            for (int e = 0; e < theList.Count; e++)
+            {
+                if (theList[e] == searchKey)
+                {
+                    return e;
+                }
 
+            }
+            return -1;
         }
 
         /// <summary>
@@ -67,8 +73,15 @@ namespace Ethan
         /// <param name="searchKey">The number to search for</param>
         public static int FindLastIndex(List<int> theList, int searchKey)
         {
-            // TODO implement
-            throw new System.NotImplementedException();
+            for (int e = theList.Count-1; e >= 0; e--)
+            {
+                if (theList[e] == searchKey)
+                {
+                    return e;
+                }
+
+            }
+            return -1;
 
         }
 
