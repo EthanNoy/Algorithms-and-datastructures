@@ -20,7 +20,6 @@ namespace Ethan
 
             }
 
-
         }
 
 
@@ -85,6 +84,15 @@ namespace Ethan
 
         }
 
+        /// <summary>
+        /// Removes all duplicate integers from the list.
+        /// </summary>
+        /// <param name="theList">The list to de-duplicate</param>
+        public static void DeDupe(List<int> theList) {
+
+            throw new NotImplementedException();
+
+        }
 
     }
 }

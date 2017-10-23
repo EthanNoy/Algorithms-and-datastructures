@@ -5,28 +5,27 @@ namespace Ethan
 {
     class MainClass
     {
+
+
         public static void Main(string[] args)
         {
+            List<int> test = new List<int>();
             Random rnd = new Random();
-            List<int> testList = new List<int>();
 
-            for (int i = 0; i < 20; i++) {
-                testList.Add(rnd.Next(10));
+            for (int i = 0; i < 30; i++) {
+
+                test.Add(rnd.Next(5));
+                
             }
 
-            ListTools.Print(testList);
+            ListTools.Print(test);
 
-            Console.WriteLine("Searching for 5");
-            Console.WriteLine("Found first at " + ListTools.FindFirstIndex(testList, 5));
+            Console.WriteLine("De-duplicating...");
+            ListTools.DeDupe(test);
 
-            Console.WriteLine("Searching for 5");
-            Console.WriteLine("Found last at " + ListTools.FindLastIndex(testList, 5));
+            ListTools.Print(test);
 
 
-            Console.WriteLine("============= end =======================");
-
-            Console.WriteLine("Press any key to exit");
-            Console.ReadKey();
         }
     }
 }
