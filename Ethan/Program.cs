@@ -9,22 +9,17 @@ namespace Ethan
 
         public static void Main(string[] args)
         {
-            List<int> test = new List<int>();
-            Random rnd = new Random();
 
-            for (int i = 0; i < 30; i++) {
+            StatsCounter counter = new StatsCounter();
 
-                test.Add(rnd.Next(5));
-                
-            }
+            counter.RegisterGoalScored("Steve");
+            counter.RegisterGoalScored("Steve");
+            counter.RegisterGoalScored("Steve");
+            counter.RegisterGoalScored("Steve");
 
-            ListTools.Print(test);
+            Console.WriteLine("Steve scored " + counter.GetGoals("Steve") + " goal(s)");
 
-            Console.WriteLine("De-duplicating...");
-            List<int> deduup = ListTools.DeDupe(test);
-
-            ListTools.Print(deduup);
-            Console.ReadKey();
+            Console.WriteLine("Ethan scored " + counter.GetGoals("Ethan") + " goal(s)");
 
         }
     }
