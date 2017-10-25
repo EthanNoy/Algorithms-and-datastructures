@@ -21,10 +21,10 @@ namespace Ethan
             ListTools.Print(test);
 
             Console.WriteLine("De-duplicating...");
-            ListTools.DeDupe(test);
+            List<int> deduup = ListTools.DeDupe(test);
 
-            ListTools.Print(test);
-
+            ListTools.Print(deduup);
+            Console.ReadKey();
 
         }
     }

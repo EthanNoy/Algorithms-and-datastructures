@@ -88,11 +88,24 @@ namespace Ethan
         /// Removes all duplicate integers from the list.
         /// </summary>
         /// <param name="theList">The list to de-duplicate</param>
-        public static void DeDupe(List<int> theList) {
+        public static List<int> DeDupe(List<int> theList) {
+            List<int> deduup = new List<int>();
+            bool Isfound = false;
+            for (int e = 0; e < theList.Count; e++)
+            {
+                Isfound = false;
+                for (int i = 0; i < deduup.Count; i++)
+                {
+                    if (theList[e] == deduup[i])
+                    {
+                        Isfound = true;
+                    }
+                }
+                if (Isfound == false)
+                    deduup.Add(theList[e]);
 
-            throw new NotImplementedException();
-
+            }
+            return deduup;
         }
-
     }
 }
