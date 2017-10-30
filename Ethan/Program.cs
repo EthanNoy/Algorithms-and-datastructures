@@ -21,6 +21,7 @@ namespace Ethan
 
             Console.WriteLine("Ethan scored " + counter.GetGoals("Ethan") + " goal(s)");
 
+            Console.ReadKey();
         }
     }
 }

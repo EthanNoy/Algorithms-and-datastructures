@@ -21,19 +21,33 @@ namespace Ethan
         /// Registers that the specified player just scored a goal.
         /// </summary>
         /// <param name="playerName">Player name.</param>
-        public void RegisterGoalScored(string playerName) {
+        public void RegisterGoalScored(string playerName)
+        {
 
-            throw new NotImplementedException();
+            int value = 1;
+            if (goals.ContainsKey(playerName))
+            {
+                if (goals.TryGetValue(playerName, out value))
+                {
+                    value++;
+                }
+                goals.Remove(playerName);
+            }
+            goals.Add(playerName, value);
         }
-
         /// <summary>
         /// Gets the goal count for the specified player.
         /// </summary>
         /// <returns>The goals.</returns>
         /// <param name="playerName">Player name.</param>
-        public int GetGoals(string playerName)
+            public int GetGoals(string playerName)
         {
-            throw new NotImplementedException();
+            int value = 0;
+            if (goals.ContainsKey(playerName))
+            {
+                goals.TryGetValue(playerName, out value);
+            }
+            return value;
         }
 
 
