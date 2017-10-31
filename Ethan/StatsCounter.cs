@@ -35,6 +35,7 @@ namespace Ethan
             }
             goals.Add(playerName, value);
         }
+
         /// <summary>
         /// Gets the goal count for the specified player.
         /// </summary>
@@ -49,8 +50,6 @@ namespace Ethan
             }
             return value;
         }
-
-
 
     }
 }

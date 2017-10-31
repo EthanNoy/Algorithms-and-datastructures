@@ -37,6 +37,7 @@
     <Compile Include="BubbleSort.cs" />
     <Compile Include="ListTools.cs" />
     <Compile Include="StatsCounter.cs" />
+    <Compile Include="RingBuffer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
