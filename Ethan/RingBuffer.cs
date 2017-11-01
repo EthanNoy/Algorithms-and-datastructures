@@ -31,7 +31,10 @@ namespace Ethan
         /// <param name="data">Data.</param>
         public void Add(int data)
         {
-            throw new NotImplementedException();
+            if(RingBoofer.Count == KapaPride)
+                RingBoofer.RemoveAt(0);
+            RingBoofer.Add(data);
+            
 
         }
 
@@ -42,7 +45,10 @@ namespace Ethan
         /// <param name="index">Index.</param>
         public int At(int index)
         {
-            throw new NotImplementedException();
+            if (index < RingBoofer.Count && index >= 0)
+                return RingBoofer[index];
+            else
+                throw new IndexOutOfRangeException();
         }
 
         /// <summary>
@@ -53,6 +59,13 @@ namespace Ethan
             return SIIZ;
         }
 
+
+        public void PrintMe(){
+            for (int e = 0; e < RingBoofer.Count; e++){
+                Console.WriteLine("item[" + e + "]=" + RingBoofer[e]);
+            }
+
+        }
 
     }
 }
