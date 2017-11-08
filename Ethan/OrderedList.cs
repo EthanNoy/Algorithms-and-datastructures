@@ -57,6 +57,21 @@ namespace Ethan
 
         }
 
+        public int IndexOf(int value) 
+        {
+
+            // Solve without using IndexOf method of list
+
+            // Returns the position of the value in our underlying list
+
+            // for example, if I add 4, 5, 6, and 2 to a list, then ask
+            // for the position of 2, it should return 0, as this is the lowest entry
+            // if I ask for the position of 6, it should return 3, as it is the largest
+
+            throw new NotImplementedException();
+
+        }
+
         public void Print()
         {
 
