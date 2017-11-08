@@ -24,16 +24,14 @@ namespace Ethan
         public void RegisterGoalScored(string playerName)
         {
 
-            int value = 1;
             if (goals.ContainsKey(playerName))
             {
-                if (goals.TryGetValue(playerName, out value))
-                {
-                    value++;
-                }
-                goals.Remove(playerName);
+                goals[playerName]++;
             }
-            goals.Add(playerName, value);
+            else
+            {
+                goals.Add(playerName, 1);
+            }
         }
 
         /// <summary>
@@ -44,10 +42,7 @@ namespace Ethan
             public int GetGoals(string playerName)
         {
             int value = 0;
-            if (goals.ContainsKey(playerName))
-            {
-                goals.TryGetValue(playerName, out value);
-            }
+            goals.TryGetValue(playerName, out value);
             return value;
         }
 

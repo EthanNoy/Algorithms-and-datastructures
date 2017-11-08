@@ -38,6 +38,7 @@
     <Compile Include="ListTools.cs" />
     <Compile Include="StatsCounter.cs" />
     <Compile Include="RingBuffer.cs" />
+    <Compile Include="OrderedList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
