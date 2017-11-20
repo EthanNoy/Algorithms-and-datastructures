@@ -9,29 +9,20 @@ namespace Ethan
 
         public static void Main(string[] args)
         {
-            /*
-            StatsCounter counter = new StatsCounter();
 
-            counter.RegisterGoalScored("Steve");
-            counter.RegisterGoalScored("Steve");
-            counter.RegisterGoalScored("Steve");
-            counter.RegisterGoalScored("Steve");
+            OrderedList ol = new OrderedList();
 
-            Console.WriteLine("Steve scored " + counter.GetGoals("Steve") + " goal(s)");
+            ol.Add(5);
 
-            Console.WriteLine("Ethan scored " + counter.GetGoals("Ethan") + " goal(s)");
-            */
-            RingBuffer ring = new RingBuffer(3);
-            ring.Add(5);
-            ring.Add(20);
-            ring.Add(11);
-            Console.WriteLine("After first third:");
-            ring.PrintMe();
-            ring.Add(0);
-            Console.WriteLine("After the fourth:");
-            ring.PrintMe();
+            ol.Add(7);
 
-            Console.ReadKey();
+            ol.Add(10);
+
+            ol.Add(-4);
+
+            ol.Print();
+
+
         }
     }
 }

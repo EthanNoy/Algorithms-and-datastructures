@@ -13,27 +13,25 @@ namespace Ethan
     /// </summary>
     public class OrderedList
     {
-        // Note: you may not use SortedList to solve
 
-        // Note: you may not to use Sort to solve
+        // Note: first, create an orderedlist that holds only 10 items, max
 
-        // Note: Extra Credit if you solve with an array instead of a list
-
-        List<int> ListInOrder = new List<int>();
+        int[] ListInOrder;
+        int Count;
 
         public OrderedList()
         {
+
+            ListInOrder = new int[10];
+            Count = 0;
 
         }
 
         public void Add(int value)
         {
-
-            int insertIndex = 0;
-
-            // Use this, but you must find the index to insert at
-            ListInOrder.Insert(insertIndex, value);
-
+            
+            ListInOrder[Count] = value;
+            Count++;
         }
 
 
@@ -47,11 +45,7 @@ namespace Ethan
 
         public bool Contains(int value)
         {
-            // Note: do not use the Contains() method of a list to solve
 
-            // Since the list is sorted, can you search through the list
-            // like a phone book - look in the middle, and which side
-            // our value is on.  Then, search the middle of that half, etc...
 
             throw new NotImplementedException();
 
@@ -60,13 +54,7 @@ namespace Ethan
         public int IndexOf(int value) 
         {
 
-            // Solve without using IndexOf method of list
-
-            // Returns the position of the value in our underlying list
-
-            // for example, if I add 4, 5, 6, and 2 to a list, then ask
-            // for the position of 2, it should return 0, as this is the lowest entry
-            // if I ask for the position of 6, it should return 3, as it is the largest
+ 
 
             throw new NotImplementedException();
 
@@ -75,11 +63,26 @@ namespace Ethan
         public void Print()
         {
 
-            // this should be easy if your underlying list or array is already 
+            // this should be easy if your underlying array is already 
             // in order
 
-            throw new NotImplementedException();
+            for (int d = 0; d < Count; d++){
+                Console.WriteLine(ListInOrder[d]);
+
+            }
 
         }
+
+        public void DebugPrintUnderlyingArray()
+        {
+            
+            for (int d = 0; d < ListInOrder.Length; d++)
+            {
+                Console.WriteLine(ListInOrder[d]);
+
+            }
+
+        }
+
     }
 }
