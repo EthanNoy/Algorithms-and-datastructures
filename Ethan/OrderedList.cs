@@ -32,6 +32,26 @@ namespace Ethan
             
             ListInOrder[Count] = value;
             Count++;
+
+            // bubble last entry down
+            bubbleDown();
+
+        }
+
+        void bubbleDown() {
+
+            if (Count >= 2)
+            {
+
+                if (ListInOrder[Count - 1] <= ListInOrder[Count - 2])
+                {
+                    int temp = 0;
+                    temp = ListInOrder[Count - 1];
+                    ListInOrder[Count - 1] = ListInOrder[Count - 2];
+                    ListInOrder[Count - 2] = temp;
+                }
+
+            }
         }
 
 
@@ -46,15 +66,20 @@ namespace Ethan
         public bool Contains(int value)
         {
 
+            for (int e = 0; e < Count; e++){
+                if (ListInOrder[e] == value){
+                    return true;
+                }
 
-            throw new NotImplementedException();
+            }
+            return false;
 
         }
 
         public int IndexOf(int value) 
         {
 
- 
+            // TODO implement me 11/27
 
             throw new NotImplementedException();
 

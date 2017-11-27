@@ -12,7 +12,7 @@ namespace Ethan
 
             OrderedList ol = new OrderedList();
 
-            ol.Add(5);
+            ol.Add(0);
 
             ol.Add(7);
 
@@ -20,7 +20,15 @@ namespace Ethan
 
             ol.Add(-4);
 
+            //Console.WriteLine("Contains 0?" + ol.Contains(0));
+
+            //Console.WriteLine("Contains 777777?" + ol.Contains(777777));
+
             ol.Print();
+
+            Console.WriteLine("Underlying");
+
+            ol.DebugPrintUnderlyingArray();
 
 
         }
