@@ -42,15 +42,24 @@ namespace Ethan
 
             if (Count >= 2)
             {
+                int rhsIndex = Count - 1;
+                int lhsIndex = Count - 2;
 
-                if (ListInOrder[Count - 1] <= ListInOrder[Count - 2])
+                while (rhsIndex != 0 &&  ListInOrder[lhsIndex] > ListInOrder[rhsIndex])
                 {
-                    int temp = 0;
-                    temp = ListInOrder[Count - 1];
-                    ListInOrder[Count - 1] = ListInOrder[Count - 2];
-                    ListInOrder[Count - 2] = temp;
-                }
 
+                    if (ListInOrder[rhsIndex] <= ListInOrder[lhsIndex])
+                    {
+                        int temp = 0;
+                        temp = ListInOrder[rhsIndex];
+                        ListInOrder[rhsIndex] = ListInOrder[lhsIndex];
+                        ListInOrder[lhsIndex] = temp;
+                    }
+
+                    rhsIndex--;
+                    lhsIndex--;
+
+                }
             }
         }
 
