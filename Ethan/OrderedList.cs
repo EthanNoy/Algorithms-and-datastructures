@@ -79,9 +79,15 @@ namespace Ethan
         public int IndexOf(int value) 
         {
 
-            // TODO implement me 11/27
+            for (int e = 0; e < Count; e++)
+            {
+                if (ListInOrder[e] == value)
+                {
+                    return e;
+                }
 
-            throw new NotImplementedException();
+            }
+            return -1;
 
         }
 
