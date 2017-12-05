@@ -12,13 +12,15 @@ namespace Ethan
 
             OrderedList ol = new OrderedList();
 
-            ol.Add(0);
+            ol.Add(30);
 
-            ol.Add(7);
+            ol.Add(20);
 
             ol.Add(10);
 
-            ol.Add(-4);
+            ol.Add(5);
+
+            ol.Add(00);
 
             //Console.WriteLine("Contains 0?" + ol.Contains(0));
 
