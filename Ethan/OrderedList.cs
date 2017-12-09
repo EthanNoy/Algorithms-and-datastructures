@@ -66,8 +66,20 @@ namespace Ethan
 
         public int Remove(int value)
         {
+            int Index_Value = -1;
+            for (int e = 0; e < Count; e++){
+                if (ListInOrder[e] == value){
+                    Index_Value = e;
+                    for (int d = e+1; d < Count; d++){
 
-            throw new NotImplementedException();
+                        ListInOrder[d-1] = ListInOrder[d];
+                    }
+                    Count = Count-1;
+                    ListInOrder[Count] = 0;
+                }
+
+            }
+            return Index_Value;
 
         }
 

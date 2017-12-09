@@ -26,6 +26,8 @@ namespace Ethan
 
             //Console.WriteLine("Contains 777777?" + ol.Contains(777777));
 
+            ol.Remove(10);
+
             ol.Print();
 
             Console.WriteLine("Underlying");
