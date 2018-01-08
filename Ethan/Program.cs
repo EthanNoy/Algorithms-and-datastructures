@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Ethan
@@ -10,20 +10,21 @@ namespace Ethan
         public static void Main(string[] args)
         {
 
-            OrderedList ol = new OrderedList();
+            SimpleStack s = new SimpleStack(10);
 
-            ol.Add(30);
+            s.Push(64);
 
-            ol.Add(20);
+            s.Push(72);
 
-            ol.Add(10);
+            s.Push(7);
 
-            ol.Add(5);
+            s.Push(8);
 
-            ol.Add(00);
+            s.Push(24);
 
-            //Console.WriteLine("Contains 0?" + ol.Contains(0));
+            s.PrintUnderlying();
 
+<<<<<<< HEAD
             //Console.WriteLine("Contains 777777?" + ol.Contains(777777));
 
             ol.Remove(10);
@@ -33,6 +34,8 @@ namespace Ethan
             Console.WriteLine("Underlying");
 
             ol.DebugPrintUnderlyingArray();
+=======
+>>>>>>> bb30be7... Added SimpleStack work and assignment
 
 
         }

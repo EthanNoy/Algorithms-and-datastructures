@@ -39,6 +39,7 @@
     <Compile Include="StatsCounter.cs" />
     <Compile Include="RingBuffer.cs" />
     <Compile Include="OrderedList.cs" />
+    <Compile Include="SimpleStack.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
