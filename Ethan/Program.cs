@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Ethan
@@ -22,21 +22,9 @@ namespace Ethan
 
             s.Push(24);
 
+            Console.WriteLine("Popped:s " + s.Pop());
+
             s.PrintUnderlying();
-
-<<<<<<< HEAD
-            //Console.WriteLine("Contains 777777?" + ol.Contains(777777));
-
-            ol.Remove(10);
-
-            ol.Print();
-
-            Console.WriteLine("Underlying");
-
-            ol.DebugPrintUnderlyingArray();
-=======
->>>>>>> bb30be7... Added SimpleStack work and assignment
-
 
         }
     }

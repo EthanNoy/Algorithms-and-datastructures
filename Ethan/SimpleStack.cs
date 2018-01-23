@@ -39,7 +39,11 @@ namespace Ethan
         /// <returns>The top element of the stack.</returns>
         public int Pop()
         {
-            throw new NotImplementedException();
+            Pushpop--;
+            int result = SimpleArray[Pushpop];
+            SimpleArray[Pushpop] = 0;
+            return result;
+
         }
 
         /// <summary>
