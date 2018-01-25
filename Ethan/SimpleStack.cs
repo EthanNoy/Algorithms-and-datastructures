@@ -47,11 +47,21 @@ namespace Ethan
         }
 
         /// <summary>
+        /// Returns the top element of the stack, without removing it
+        /// </summary>
+        /// <returns>The top element of the stack</returns>
+        public int Peek() {
+            
+            return SimpleArray[Pushpop-1];
+
+        }
+
+        /// <summary>
         /// Returns the number of elements in this stack.
         /// </summary>
         /// <returns>A count of how many elements are in the stack.</returns>
         public int Count () {
-            throw new NotImplementedException();
+            return Pushpop;
         }
 
         public void PrintUnderlying() {

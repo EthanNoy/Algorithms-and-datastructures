@@ -12,6 +12,7 @@ namespace Ethan
 
             SimpleStack s = new SimpleStack(10);
 
+            /*
             s.Push(64);
 
             s.Push(72);
@@ -20,9 +21,15 @@ namespace Ethan
 
             s.Push(8);
 
-            s.Push(24);
+            s.Push(24);*/
 
-            Console.WriteLine("Popped:s " + s.Pop());
+            Console.WriteLine("Count:" + s.Count());
+
+            Console.WriteLine("Pop:" + s.Pop());
+
+            Console.WriteLine("PEEEEEEEK:" + s.Peek());
+
+            Console.WriteLine("Count:" + s.Count());
 
             s.PrintUnderlying();
 
