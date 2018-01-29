@@ -14,9 +14,15 @@ namespace Ethan
         /// <param name="capacity">Capacity.</param>
         public SimpleStack(int capacity)
         {
-            SimpleArray = new int[capacity];
-            Size = capacity;
-            Pushpop = 0;
+            if (capacity > -1)
+            {
+                SimpleArray = new int[capacity];
+                Size = capacity;
+                Pushpop = 0;
+            }
+            else{
+                throw new ArgumentOutOfRangeException(nameof(capacity), "Unable to create a stack of negative size.");
+            }
         }
 
         /// <summary>
@@ -25,10 +31,15 @@ namespace Ethan
         /// <param name="item">Element to add to the stack</param>
         public void Push(int item) 
         {
-            
 
+            if (Pushpop < Size)
+            {
                 SimpleArray[Pushpop] = item;
                 Pushpop++;
+            }
+            else{
+                throw new InvalidOperationException("Cannot push new elements onto a full SimpleStack");
+            }
             
 
         }
@@ -39,10 +50,16 @@ namespace Ethan
         /// <returns>The top element of the stack.</returns>
         public int Pop()
         {
-            Pushpop--;
-            int result = SimpleArray[Pushpop];
-            SimpleArray[Pushpop] = 0;
-            return result;
+            if (Pushpop > 0)
+            {
+                Pushpop--;
+                int result = SimpleArray[Pushpop];
+                SimpleArray[Pushpop] = 0;
+                return result;
+            }
+            else{
+                throw new InvalidOperationException("Cannot pop an int from an empty stack.");
+            }
 
         }
 
@@ -51,9 +68,13 @@ namespace Ethan
         /// </summary>
         /// <returns>The top element of the stack</returns>
         public int Peek() {
-            
-            return SimpleArray[Pushpop-1];
-
+            if (Pushpop > 0)
+            {
+                return SimpleArray[Pushpop - 1];
+            }
+            else{
+                throw new InvalidOperationException("Could not peek at an empty stack.");
+            }
         }
 
         /// <summary>
