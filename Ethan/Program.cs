@@ -10,28 +10,31 @@ namespace Ethan
         public static void Main(string[] args)
         {
 
-            SimpleStack s = new SimpleStack(5);
+            // Simple text case for SimpleQueue
 
-            s.Push(64);
+            SimpleQueue s = new SimpleQueue();
 
-            s.Push(72);
+            Console.WriteLine("Count:" + s.Count() + ", should be 0");
 
-            s.Push(7);
+            s.Enqueue(10);
 
-            s.Push(8);
+            s.Enqueue(20);
 
-            s.Push(24);
+            s.Enqueue(30);
 
+            Console.WriteLine("Count:" + s.Count() + ", should be 3");
 
-            Console.WriteLine("Count:" + s.Count());
+            Console.WriteLine("Dequeue:" + s.Dequeue() + ", should be 10");
 
-            Console.WriteLine("Pop:" + s.Pop());
+            Console.WriteLine("Count:" + s.Count() + ", should be 2");
 
-            Console.WriteLine("PEEEEEEEK:" + s.Peek());
+            Console.WriteLine("Dequeue:" + s.Dequeue() + ", should be 20");
 
-            Console.WriteLine("Count:" + s.Count());
+            Console.WriteLine("Count:" + s.Count() + ", should be 1");
 
-            s.PrintUnderlying();
+            Console.WriteLine("Dequeue:" + s.Dequeue() + ", should be 30");
+
+            Console.WriteLine("Count:" + s.Count() + ", should be 0");
 
         }
     }
