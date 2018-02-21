@@ -5,6 +5,8 @@ namespace Ethan
     /// <summary>
     /// A Queue is a data structure like a List, but it can only remove items in the order they were added.
     /// 
+    /// see: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+    /// 
     /// This is a simple implementation, and only needs to store ints.
     /// Behind the scenes, it should use an array
     /// 
