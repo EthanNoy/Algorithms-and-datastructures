@@ -1,11 +1,14 @@
 ﻿using System;
+
 namespace Ethan
 {
     public class SimpleStack
     {
         // NOTE: implement using an array, please!
         private int[] SimpleArray;
+
         private int Size;
+
         private int Pushpop;
 
         /// <summary>
@@ -25,6 +28,10 @@ namespace Ethan
             }
         }
 
+        public SimpleStack()
+        {
+        }
+
         /// <summary>
         /// Adds an element to the top of the stack.
         /// </summary>
@@ -38,7 +45,22 @@ namespace Ethan
                 Pushpop++;
             }
             else{
-                throw new InvalidOperationException("Cannot push new elements onto a full SimpleStack");
+
+                Console.WriteLine("~-Increasing Capacity-~");
+
+                Size = Size != 0 ? Size * 2 : 4;
+
+                int[] newArray = new int[Size];
+
+                // copy the old array into this one
+                Array.Copy(SimpleArray, newArray, SimpleArray.Length);
+
+                // this is our new SimpleArray
+                SimpleArray = newArray;
+
+                // add the item
+                SimpleArray[Pushpop] = item;
+                Pushpop++;
             }
             
 

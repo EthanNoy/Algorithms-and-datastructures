@@ -41,6 +41,8 @@
     <Compile Include="OrderedList.cs" />
     <Compile Include="SimpleStack.cs" />
     <Compile Include="SimpleQueue.cs" />
+    <Compile Include="Cooldown.cs" />
+    <Compile Include="SingleLinkedList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
