@@ -43,6 +43,7 @@
     <Compile Include="SimpleQueue.cs" />
     <Compile Include="Cooldown.cs" />
     <Compile Include="SingleLinkedList.cs" />
+    <Compile Include="DoubleLinkedList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
