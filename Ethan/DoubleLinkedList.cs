@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
 namespace Ethan
 {
 	public class DoubleLinkedList
@@ -146,6 +149,25 @@ namespace Ethan
 		public void RemoveLast()
 		{
 			throw new NotImplementedException();
+		}
+        
+		public bool Contains (int value) {
+			Node traveler = Head;
+			if (traveler == null){
+				return false;
+			}
+			while (traveler != null){
+				if (traveler.Value == value)
+				{
+					return true;
+				}
+				else if (traveler.Value != value)
+				{
+					traveler = traveler.Next;
+				}
+
+			}
+			return false;
 		}
 
 		public override string ToString()

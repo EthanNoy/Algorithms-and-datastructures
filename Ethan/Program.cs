@@ -29,6 +29,10 @@ namespace Ethan
 
             Console.WriteLine(list);
 
+			Console.WriteLine("Searching for: 9: " + list.Contains(9));
+			Console.WriteLine("Searching for: 27: " + list.Contains(27));
+			Console.WriteLine("Searching for: 2: " + list.Contains(2));
+
         }
 
         static void LinkedListTests()
