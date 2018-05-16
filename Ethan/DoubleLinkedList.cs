@@ -138,17 +138,47 @@ namespace Ethan
 
 		public void RemoveAll(int value) 
 		{
-			throw new NotImplementedException();	
+				Node traveler = Head;
+				while (traveler.next != null){
+					traveler = traveler.Next
+					traveler.Previous = null;
+					Head = traveler;
+				}
+				if (traveler == Tail && traveler == Head){
+					traveler = null;
+					Head = null;
+					Tail = null;
+				}
+				if (traveler.next == null){
+					traveler = null;
+					Head = null;
+					Tail = null;
+				}
 		}
 
 		public void RemoveFirst()
 		{
-			throw new NotImplementedException();
+			Node traveler = Head;
+			if (Head != null){
+				traveler = traveler.next;
+				Head = traveler;
+				if (traveler != null){
+					traveler.Previous = null;
+				}
+			}
+			return;
 		}
 
 		public void RemoveLast()
 		{
-			throw new NotImplementedException();
+			Node traveler = Tail;
+			if (Tail != null){
+				traveler = traveler.Previous;
+				Tail = traveler;
+				if (traveler != null){
+					traveler.next = null;
+				}
+			}
 		}
         
 		public bool Contains (int value) {

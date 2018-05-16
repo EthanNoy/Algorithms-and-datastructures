@@ -33,6 +33,9 @@ namespace Ethan
 			Console.WriteLine("Searching for: 27: " + list.Contains(27));
 			Console.WriteLine("Searching for: 2: " + list.Contains(2));
 
+			list.RemoveAll();
+			Console.WriteLine(list);
+
         }
 
         static void LinkedListTests()
