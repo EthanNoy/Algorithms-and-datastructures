@@ -139,8 +139,8 @@ namespace Ethan
 		public void RemoveAll(int value) 
 		{
 				Node traveler = Head;
-				while (traveler.next != null){
-					traveler = traveler.Next
+				while (traveler.Next != null){
+				traveler = traveler.Next;
 					traveler.Previous = null;
 					Head = traveler;
 				}
@@ -149,7 +149,7 @@ namespace Ethan
 					Head = null;
 					Tail = null;
 				}
-				if (traveler.next == null){
+				if (traveler.Next == null){
 					traveler = null;
 					Head = null;
 					Tail = null;
@@ -160,8 +160,11 @@ namespace Ethan
 		{
 			Node traveler = Head;
 			if (Head != null){
-				traveler = traveler.next;
+				traveler = traveler.Next;
 				Head = traveler;
+				if (traveler == Tail){
+					Tail = null;
+				}
 				if (traveler != null){
 					traveler.Previous = null;
 				}
@@ -175,8 +178,11 @@ namespace Ethan
 			if (Tail != null){
 				traveler = traveler.Previous;
 				Tail = traveler;
+				if (Head == traveler){
+					Head = null;
+				}
 				if (traveler != null){
-					traveler.next = null;
+					traveler.Next = null;
 				}
 			}
 		}
