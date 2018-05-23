@@ -11,7 +11,7 @@ namespace Ethan
         {
 
             DblLinkedListTests();
-
+            Console.ReadLine();
         }
 
         static void DblLinkedListTests() {
@@ -20,12 +20,9 @@ namespace Ethan
             
             list.AddToTail(9);
             list.AddToTail(18);
-            list.AddToTail(27);
+            list.AddToTail(36);
 			list.AddToTail(36);
 
-			Console.WriteLine(list);
-
-            list.Remove(36);
 
             Console.WriteLine(list);
 
@@ -33,26 +30,12 @@ namespace Ethan
 			Console.WriteLine("Searching for: 27: " + list.Contains(27));
 			Console.WriteLine("Searching for: 2: " + list.Contains(2));
 
-			list.RemoveFirst();
-			list.RemoveFirst();
-			list.RemoveFirst();
-			Console.WriteLine(list);
-
-			list.AddToTail(9);
-            list.AddToTail(18);
-            list.AddToTail(27);
-            list.AddToTail(36);
-
-			list.RemoveLast();
-			list.RemoveLast();
-			Console.WriteLine(list);
-			list.RemoveLast();
-			list.RemoveLast();
-			Console.WriteLine(list);
+            list.RemoveAll(36);
 
 
 
         }
+
 
         static void LinkedListTests()
         {

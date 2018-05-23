@@ -139,21 +139,27 @@ namespace Ethan
 		public void RemoveAll(int value) 
 		{
 				Node traveler = Head;
-				while (traveler.Next != null){
-				traveler = traveler.Next;
-					traveler.Previous = null;
-					Head = traveler;
-				}
-				if (traveler == Tail && traveler == Head){
-					traveler = null;
-					Head = null;
-					Tail = null;
-				}
-				if (traveler.Next == null){
-					traveler = null;
-					Head = null;
-					Tail = null;
-				}
+				if (traveler.Value == value)
+            {
+                traveler = traveler.Next;
+                if (traveler.Previous != null)
+                {
+                    traveler.Previous = null;
+                }
+                if (traveler.Previous.Previous != null)
+                {
+                    traveler.Previous.Previous = null;
+                }
+                
+            }
+                else if (traveler.Value != value)
+            {
+                traveler = traveler.Next;
+            }
+                else if (traveler == null && traveler.Value != value)
+            {
+                return;
+            }
 		}
 
 		public void RemoveFirst()
