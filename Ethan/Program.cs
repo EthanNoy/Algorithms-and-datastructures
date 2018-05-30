@@ -9,14 +9,9 @@ namespace Ethan
 
         public static void Main(string[] args)
         {
+            
+			BSTTests();         
 
-<<<<<<< HEAD
-            DblLinkedListTests();
-            Console.ReadLine();
-=======
-			BSTTests();
-
->>>>>>> 3f44579... Implemented BST contains
         }
 
 		static void BSTTests(){
