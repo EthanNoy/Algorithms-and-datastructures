@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Ethan
@@ -10,9 +10,44 @@ namespace Ethan
         public static void Main(string[] args)
         {
 
+<<<<<<< HEAD
             DblLinkedListTests();
             Console.ReadLine();
+=======
+			BSTTests();
+
+>>>>>>> 3f44579... Implemented BST contains
         }
+
+		static void BSTTests(){
+
+			BinarySearchTree tree = new BinarySearchTree();
+
+			Console.WriteLine("Searching for 5: " + tree.Contains(5));
+            
+			tree.Add(5);
+            tree.Add(2);
+            tree.Add(7);
+            tree.Add(9);
+            tree.Add(11);
+            tree.Add(3);
+            tree.Add(1);
+            tree.Add(4);
+            tree.Add(6);
+            tree.Add(0);
+            tree.Add(-2);
+            tree.Add(-5);
+			tree.Add(1);
+
+            Console.WriteLine(tree);
+
+            Console.WriteLine("Searching for 5: " + tree.Contains(5));
+            Console.WriteLine("Searching for -5" + tree.Contains(-5));
+            Console.WriteLine("Searching for 70: " + tree.Contains(70));
+            Console.WriteLine("Searching for 11: " + tree.Contains(11));
+
+
+		}
 
         static void DblLinkedListTests() {
 
