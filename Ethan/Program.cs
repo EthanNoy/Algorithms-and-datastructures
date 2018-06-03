@@ -32,7 +32,7 @@ namespace Ethan
             tree.Add(0);
             tree.Add(-2);
             tree.Add(-5);
-			tree.Add(1);
+			tree.Add(-1);
 
             Console.WriteLine(tree);
 
@@ -40,6 +40,12 @@ namespace Ethan
             Console.WriteLine("Searching for -5" + tree.Contains(-5));
             Console.WriteLine("Searching for 70: " + tree.Contains(70));
             Console.WriteLine("Searching for 11: " + tree.Contains(11));
+
+            tree.Remove(-1);
+
+            Console.WriteLine(tree);
+
+            Console.ReadLine();
 
 
 		}

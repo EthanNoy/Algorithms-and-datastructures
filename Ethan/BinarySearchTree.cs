@@ -78,9 +78,32 @@ namespace Ethan
 
 		public void Remove(int value) {
 
-			// note: you only need to implement this to remove a 'leaf'
+            // note: you only need to implement this to remove a 'leaf'
             // a leaf is a node with null children
-
+            Node traveler = Root;
+            while (traveler != null)
+            {
+               if (traveler.Value > value)
+                {
+                    traveler = traveler.Left;
+                }
+               else if (traveler.Value < value)
+                {
+                    traveler = traveler.Right;
+                }
+               else if (traveler.Right.Value == value)
+                {
+                    if (traveler.Right.Right != null)
+                    {
+                        traveler.Right.Right = null;
+                    }
+                    if (traveler.Right.Left != null)
+                    {
+                        traveler.Right.Left = null;
+                    }
+                    return;
+                }
+            }
             // otherwise, for now, throw an InvalidOperationException
 
 
