@@ -81,31 +81,37 @@ namespace Ethan
             // note: you only need to implement this to remove a 'leaf'
             // a leaf is a node with null children
             Node traveler = Root;
+            Node Before_Traveler = null;
+            bool IfLeft = false;
             while (traveler != null)
             {
                if (traveler.Value > value)
                 {
+                    Before_Traveler = traveler;
                     traveler = traveler.Left;
+                    IfLeft = true;
                 }
                else if (traveler.Value < value)
                 {
+                    Before_Traveler = traveler;
                     traveler = traveler.Right;
+                    IfLeft = false;
                 }
-               else if (traveler.Right.Value == value)
+               else if (traveler.Right == null && traveler.Left == null)
                 {
-                    if (traveler.Right.Right != null)
+                    if (IfLeft == true)
                     {
-                        traveler.Right.Right = null;
+                        Before_Traveler.Left = null;
                     }
-                    if (traveler.Right.Left != null)
+                    else
                     {
-                        traveler.Right.Left = null;
+                        Before_Traveler.Right = null;
                     }
                     return;
                 }
             }
             // otherwise, for now, throw an InvalidOperationException
-
+            throw new InvalidOperationException();
 
 		}
 

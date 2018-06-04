@@ -41,7 +41,7 @@ namespace Ethan
             Console.WriteLine("Searching for 70: " + tree.Contains(70));
             Console.WriteLine("Searching for 11: " + tree.Contains(11));
 
-            tree.Remove(-1);
+            tree.Remove(11);
 
             Console.WriteLine(tree);
 
