@@ -85,19 +85,19 @@ namespace Ethan
             bool IfLeft = false;
             while (traveler != null)
             {
-               if (traveler.Value > value)
+                if (traveler.Value > value)
                 {
                     Before_Traveler = traveler;
                     traveler = traveler.Left;
                     IfLeft = true;
                 }
-               else if (traveler.Value < value)
+                else if (traveler.Value < value)
                 {
                     Before_Traveler = traveler;
                     traveler = traveler.Right;
                     IfLeft = false;
                 }
-               else if (traveler.Right == null && traveler.Left == null)
+                else if (traveler.Right == null && traveler.Left == null)
                 {
                     if (IfLeft == true)
                     {
@@ -109,9 +109,46 @@ namespace Ethan
                     }
                     return;
                 }
+                else if (traveler.Right == null)
+                {
+                    if (Before_Traveler == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                    else if (Before_Traveler.Right == traveler)
+                    {
+                        Before_Traveler.Right = traveler.Left;
+                    }
+                    else if (Before_Traveler.Left == traveler)
+                    {
+                        Before_Traveler.Left = traveler.Left;
+                    }
+                    return;
+                }
+                else if (traveler.Left == null){
+
+                    if (Before_Traveler == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                    else if (Before_Traveler.Right == traveler)
+                    {
+                        Before_Traveler.Right = traveler.Left;
+                    }
+                    else if (Before_Traveler.Left == traveler)
+                    {
+                        Before_Traveler.Left = traveler.Right;
+                    }
+                    return;
+                        
+                }
+                else {
+
+                    throw new HomeworkIncompleteException("I haven't written two-child node removal yet");
+
+                }
             }
             // otherwise, for now, throw an InvalidOperationException
-            throw new InvalidOperationException();
 
 		}
 
@@ -123,6 +160,12 @@ namespace Ethan
 
 			public Node Right;
 		}
+
+        public class HomeworkIncompleteException : Exception {
+            public HomeworkIncompleteException(string message) : base(message){
+              
+            }
+        }
 
 		const int maxDepth = 7;
 		public override string ToString()
