@@ -125,7 +125,7 @@ namespace Ethan
                     }
                     return;
                 }
-                else if (traveler.Left == null){
+                else if (traveler.Left == null) {
 
                     if (Before_Traveler == null)
                     {
@@ -140,7 +140,32 @@ namespace Ethan
                         Before_Traveler.Left = traveler.Right;
                     }
                     return;
-                        
+
+                }
+                else if (traveler.Left != null && traveler.Right == null)
+                {
+                    if (Before_Traveler == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                    else
+                    {
+                        Before_Traveler.Left = traveler.Left;
+                    }
+                    return;
+
+                }
+                else if (traveler.Right != null && traveler.Left == null)
+                {
+                    if (Before_Traveler == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                    else
+                    {
+                        Before_Traveler.Right = traveler.Right;
+                    }
+                    return;
                 }
                 else {
 
