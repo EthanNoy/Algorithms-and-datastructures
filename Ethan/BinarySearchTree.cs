@@ -82,100 +82,104 @@ namespace Ethan
             // a leaf is a node with null children
             Node traveler = Root;
             Node Before_Traveler = null;
-            bool IfLeft = false;
             while (traveler != null)
             {
                 if (traveler.Value > value)
                 {
                     Before_Traveler = traveler;
                     traveler = traveler.Left;
-                    IfLeft = true;
                 }
                 else if (traveler.Value < value)
                 {
                     Before_Traveler = traveler;
                     traveler = traveler.Right;
-                    IfLeft = false;
-                }
-                else if (traveler.Right == null && traveler.Left == null)
-                {
-                    if (IfLeft == true)
-                    {
-                        Before_Traveler.Left = null;
-                    }
-                    else
-                    {
-                        Before_Traveler.Right = null;
-                    }
-                    return;
-                }
-                else if (traveler.Right == null)
-                {
-                    if (Before_Traveler == null)
-                    {
-                        throw new InvalidOperationException();
-                    }
-                    else if (Before_Traveler.Right == traveler)
-                    {
-                        Before_Traveler.Right = traveler.Left;
-                    }
-                    else if (Before_Traveler.Left == traveler)
-                    {
-                        Before_Traveler.Left = traveler.Left;
-                    }
-                    return;
-                }
-                else if (traveler.Left == null) {
-
-                    if (Before_Traveler == null)
-                    {
-                        throw new InvalidOperationException();
-                    }
-                    else if (Before_Traveler.Right == traveler)
-                    {
-                        Before_Traveler.Right = traveler.Left;
-                    }
-                    else if (Before_Traveler.Left == traveler)
-                    {
-                        Before_Traveler.Left = traveler.Right;
-                    }
-                    return;
-
-                }
-                else if (traveler.Left != null && traveler.Right == null)
-                {
-                    if (Before_Traveler == null)
-                    {
-                        throw new InvalidOperationException();
-                    }
-                    else
-                    {
-                        Before_Traveler.Left = traveler.Left;
-                    }
-                    return;
-
-                }
-                else if (traveler.Right != null && traveler.Left == null)
-                {
-                    if (Before_Traveler == null)
-                    {
-                        throw new InvalidOperationException();
-                    }
-                    else
-                    {
-                        Before_Traveler.Right = traveler.Right;
-                    }
-                    return;
                 }
                 else {
-
-                    throw new HomeworkIncompleteException("I haven't written two-child node removal yet");
-
+                    RemoveNode(traveler, Before_Traveler);
+                    return;
                 }
             }
             // otherwise, for now, throw an InvalidOperationException
 
 		}
+
+        private void RemoveNode(Node traveler, Node Before_Traveler) {
+            
+            if (traveler.Right == null && traveler.Left == null)
+            {
+                if(Before_Traveler == null) {
+                    Root = null;
+                }
+                else if (Before_Traveler.Left == traveler)
+                {
+                    Before_Traveler.Left = null;
+                }
+                else
+                {
+                    Before_Traveler.Right = null;
+                }
+                return;
+            }
+            else if (traveler.Right == null)
+            {
+                if (Before_Traveler == null)
+                {
+                    Root = traveler.Left;
+                }
+                else if (Before_Traveler.Right == traveler)
+                {
+                    Before_Traveler.Right = traveler.Left;
+                }
+                else if (Before_Traveler.Left == traveler)
+                {
+                    Before_Traveler.Left = traveler.Left;
+                }
+                return;
+            }
+            else if (traveler.Left == null)
+            {
+
+                if (Before_Traveler == null)
+                {
+                    Root = traveler.Right;
+                }
+                else if (Before_Traveler.Right == traveler)
+                {
+                    Before_Traveler.Right = traveler.Left;
+                }
+                else if (Before_Traveler.Left == traveler)
+                {
+                    Before_Traveler.Left = traveler.Right;
+                }
+                return;
+
+            }
+            else
+            {
+
+                // two child case
+
+                // find the leftmost right node
+                Node BottomText = traveler.Right;
+                Node BottomTextParent = traveler;
+                while (BottomText.Left != null)
+                {
+                    BottomTextParent = BottomText;
+                    BottomText = BottomText.Left;
+                }
+
+                // swap the VALUES only of that node and the one we want to remove
+                int temp = 0;
+                temp = BottomText.Value;
+                BottomText.Value = traveler.Value;
+                traveler.Value = temp;
+
+                // remove the leftmost right node
+                RemoveNode(BottomText, BottomTextParent);
+                return;
+            }
+
+        }
 
 		private class Node {
 
@@ -208,6 +212,9 @@ namespace Ethan
 			while(nodes.Count > 0) {
 
 				Node node = nodes.Dequeue();
+
+                if (node == null)
+                    continue;
 
 				builder.AppendLine(node.Value.ToString());
 

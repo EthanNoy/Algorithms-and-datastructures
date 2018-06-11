@@ -45,6 +45,7 @@
     <Compile Include="SingleLinkedList.cs" />
     <Compile Include="DoubleLinkedList.cs" />
     <Compile Include="BinarySearchTree.cs" />
+    <Compile Include="Heap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
