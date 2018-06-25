@@ -10,7 +10,33 @@ namespace Ethan
         public static void Main(string[] args)
         {
             
-			BSTTests();         
+            HeapTests();         
+
+        }
+
+        static void HeapTests() {
+
+            Heap heap = new Heap();
+
+            heap.Add(1);
+            heap.Add(7);
+            heap.Add(8);
+            heap.Add(29);
+           
+            heap.Add(5);
+            heap.Add(80);
+
+            Console.WriteLine("remove min: should be 1 " + heap.RemoveMin());
+
+            Console.WriteLine("remove min: should be 5 " + heap.RemoveMin());
+
+            Console.WriteLine("remove min: should be 7 " + heap.RemoveMin());
+
+            Console.WriteLine("remove min: should be 8 " + heap.RemoveMin());
+
+            Console.WriteLine("remove min: should be 29 " + heap.RemoveMin());
+
+            Console.WriteLine("remove min: should be 80 " + heap.RemoveMin());
 
         }
 
@@ -66,7 +92,7 @@ namespace Ethan
         static void LinkedListTests()
         {
             
-            SingleLinkedList list = new SingleLinkedList();
+            SingleLinkedList<int> list = new SingleLinkedList<int>();
 
             Console.WriteLine("Empty list length is..." + list.Count);
 
@@ -129,12 +155,12 @@ namespace Ethan
         }
 
         static void StackTests() {
-
-            SimpleStack s = new SimpleStack(5);
+            
+            SimpleStack<int> s = new SimpleStack<int>(5);
 
             for (int i = 0; i < 20; i++)
             {
-                s.Push(2);
+                s.Push(i);
             }
 
             s.PrintUnderlying();
@@ -146,7 +172,7 @@ namespace Ethan
 
             // Simple text case for SimpleQueue
 
-            SimpleQueue s = new SimpleQueue();
+            SimpleQueue<int> s = new SimpleQueue<int>();
 
             Console.WriteLine("Count:" + s.Count() + ", should be 0");
 

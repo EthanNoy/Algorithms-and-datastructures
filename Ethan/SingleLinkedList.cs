@@ -2,7 +2,7 @@
 
 namespace Ethan
 {
-    public class SingleLinkedList
+    public class SingleLinkedList<T>
     {
 
         // a reference to the 'head' object
@@ -56,7 +56,7 @@ namespace Ethan
         /// Adds the specified value to the end of the linked list.
         /// </summary>
         /// <param name="value">Value to add</param>
-        public void AddToEnd(int value)
+        public void AddToEnd(T value)
         {
 
             // Creates the new node.
@@ -86,7 +86,7 @@ namespace Ethan
         /// Adds the value to the beginning of the linked list.
         /// </summary>
         /// <param name="value">Value to add.</param>
-        public void AddToBeginning(int value)
+        public void AddToBeginning(T value)
         {
 
             // Creates the new node.
@@ -113,6 +113,8 @@ namespace Ethan
             {
                 throw new InvalidOperationException("You cannot remove from the Linked List because it's empty, YOU'RE BAD!");
             }
+
+            Head.Value = default(T);
 
             Node OldHead = Head;
             Head = Head.Next;
@@ -143,6 +145,9 @@ namespace Ethan
                 Head = null;
                 Console.WriteLine("haha this list is empty inside...");
             }
+
+            traveler.Value = default(T);
+
         }
 
         /// <summary>
@@ -150,17 +155,17 @@ namespace Ethan
         /// </summary>
         /// <returns>True if the linked list contains the specified key, otherwise false.</returns>
         /// <param name="key">Key to search for.</param>
-        public bool Contains(int key)
+        public bool Contains(T key)
         {
 
             Node traveler = Head;
             while (traveler != null)
             {
-                if (traveler.Value != key)
+                if (!traveler.Value.Equals(key))
                 {
                     traveler = traveler.Next;
                 }
-                else if (traveler.Value == key)
+                else if (traveler.Value.Equals(key))
                 {
                     return true;
                 }
@@ -183,15 +188,17 @@ namespace Ethan
             return builder.ToString();
         }
 
+        public class Node
+        {
+
+            public Node Next;
+
+            public T Value;
+
+        }
+
     }
 
-    public class Node
-    {
 
-        public Node Next;
-
-        public int Value;
-
-    }
 
 }

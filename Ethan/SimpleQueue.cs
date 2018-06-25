@@ -11,13 +11,13 @@ namespace Ethan
     /// Behind the scenes, it should use an array
     /// 
     /// </summary>
-    public class SimpleQueue
+    public class SimpleQueue<T>
     {
         // TODO create private variables here
         // I would like you to implement this with an Array
 
         // remember, you can allocate an array like this:
-        // int[] data = new int[10];
+        // T[] data = new T[10];
         // where 10 is the size of array you want
 
         public SimpleQueue()
@@ -25,12 +25,12 @@ namespace Ethan
         }
 
         // TODO adds an element to the queue
-        public void Enqueue(int value) {
+        public void Enqueue(T value) {
             throw new NotImplementedException();
         }
 
         // TODO removes the value at the front of the queue and returns it
-        public int Dequeue()
+        public T Dequeue()
         {
             throw new NotImplementedException();
         }
@@ -48,7 +48,7 @@ namespace Ethan
 
         // TODO returns true if the queue contains the value
         // otherwise, returns false
-        public bool Contains(int value) {
+        public bool Contains(T value) {
             throw new NotImplementedException();
         }
 

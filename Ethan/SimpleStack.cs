@@ -2,10 +2,10 @@
 
 namespace Ethan
 {
-    public class SimpleStack
+    public class SimpleStack<T>
     {
         // NOTE: implement using an array, please!
-        private int[] SimpleArray;
+        private T[] SimpleArray;
 
         private int Size;
 
@@ -19,7 +19,7 @@ namespace Ethan
         {
             if (capacity > -1)
             {
-                SimpleArray = new int[capacity];
+                SimpleArray = new T[capacity];
                 Size = capacity;
                 Pushpop = 0;
             }
@@ -36,7 +36,7 @@ namespace Ethan
         /// Adds an element to the top of the stack.
         /// </summary>
         /// <param name="item">Element to add to the stack</param>
-        public void Push(int item) 
+        public void Push(T item) 
         {
 
             if (Pushpop < Size)
@@ -50,7 +50,7 @@ namespace Ethan
 
                 Size = Size != 0 ? Size * 2 : 4;
 
-                int[] newArray = new int[Size];
+                T[] newArray = new T[Size];
 
                 // copy the old array into this one
                 Array.Copy(SimpleArray, newArray, SimpleArray.Length);
@@ -70,13 +70,13 @@ namespace Ethan
         /// Removes the top element of the stack, and returns it.
         /// </summary>
         /// <returns>The top element of the stack.</returns>
-        public int Pop()
+        public T Pop()
         {
             if (Pushpop > 0)
             {
                 Pushpop--;
-                int result = SimpleArray[Pushpop];
-                SimpleArray[Pushpop] = 0;
+                T result = SimpleArray[Pushpop];
+                SimpleArray[Pushpop] = default(T);
                 return result;
             }
             else{
@@ -89,7 +89,7 @@ namespace Ethan
         /// Returns the top element of the stack, without removing it
         /// </summary>
         /// <returns>The top element of the stack</returns>
-        public int Peek() {
+        public T Peek() {
             if (Pushpop > 0)
             {
                 return SimpleArray[Pushpop - 1];
