@@ -10,7 +10,46 @@ namespace Ethan
         public static void Main(string[] args)
         {
             
-            HeapTests();         
+            PalindromeTestes();
+        }
+
+        static void PalindromeTestes (){
+
+            Console.WriteLine(ArraysAndStrings.IsPalindrome(" ta co c a t"));
+
+        }
+
+        static void BestMatchTests() {
+
+            List<string> dictionary = new List<string>(new string[] { "rocket league", "the long dark", "ancient future", "rambo" });
+
+            Console.WriteLine(ArraysAndStrings.BestMatch("rocket", dictionary));
+
+            Console.WriteLine(ArraysAndStrings.BestMatch("the", dictionary));
+
+            Console.WriteLine(ArraysAndStrings.BestMatch("league", dictionary));
+
+            Console.WriteLine(ArraysAndStrings.BestMatch("futu", dictionary));
+
+            Console.WriteLine(ArraysAndStrings.BestMatch("rpocketlegau", dictionary));
+
+        }
+
+        static void SetTests () {
+            int[] BadLefty = new int[]{
+                1,2,3,7,5
+            };
+
+            int[] Lefty = new int[]{
+                1,2,3,4,5
+            };
+            int[] Righty = new int[]{
+                4,2,3,1,5
+            };
+
+            Console.WriteLine(ArraysAndStrings.SameSet(Lefty, Righty));
+
+            Console.WriteLine(ArraysAndStrings.SameSet(BadLefty, Righty));
 
         }
 
